@@ -1,27 +1,27 @@
-exports.SignUp = class SignUp{
-    Name = "input[placeholder='Name']";
-    EmailAddress = '[data-qa="signup-email"]';
-    btnSignUp = '[data-qa="signup-button"]';
-    btnGender = "input#id_gender1";
-    Password = '[data-qa="password"]';
-    Day = '[data-qa="days"]';
-    Month = '[data-qa="months"]';
-    Year = '[data-qa="years"]';
-    Newsletter = "#newsletter";
-    Offer = "#optin";
-    FirstName = '[data-qa="first_name"]';
-    LastName = '[data-qa="last_name"]';
-    Company = '[data-qa="company"]';
-    Address = '[data-qa="address"]';
-    Address2 = '[data-qa="address2"]';
-    Country = '[data-qa="country"]';
-    State = '[data-qa="state"]';
-    City = '[data-qa="city"]';
-    ZipCode = "#zipcode";
-    MobileNum = "#mobile_number";
-    btnCreateAccount = "button[data-qa='create-account']";
-    btnContinue = '[data-qa="continue-button"]';
-  constructor(page){
+exports.SignUp = class SignUp {
+  Name = "input[placeholder='Name']";
+  EmailAddress = '[data-qa="signup-email"]';
+  btnSignUp = '[data-qa="signup-button"]';
+  btnGender = "input#id_gender1";
+  Password = '[data-qa="password"]';
+  Day = '[data-qa="days"]';
+  Month = '[data-qa="months"]';
+  Year = '[data-qa="years"]';
+  Newsletter = "#newsletter";
+  Offer = "#optin";
+  FirstName = '[data-qa="first_name"]';
+  LastName = '[data-qa="last_name"]';
+  Company = '[data-qa="company"]';
+  Address = '[data-qa="address"]';
+  Address2 = '[data-qa="address2"]';
+  Country = '[data-qa="country"]';
+  State = '[data-qa="state"]';
+  City = '[data-qa="city"]';
+  ZipCode = "#zipcode";
+  MobileNum = "#mobile_number";
+  btnCreateAccount = "button[data-qa='create-account']";
+  btnContinue = '[data-qa="continue-button"]';
+  constructor(page) {
     this.page = page;
     /*
     this.Name = "input[placeholder='Name']";
@@ -49,30 +49,29 @@ exports.SignUp = class SignUp{
     */
   }
   //assigning name
-  async setName(name){
+  async setName(name) {
     await this.page.locator(this.Name).fill(name);
-  };
+  }
   // assigning email address
   async setEmailAddress(email) {
     await this.page.locator(this.EmailAddress).fill(email);
-  };
+  }
 
   // clicking sign up btn
   async clickSignUp() {
     await this.page.locator(this.btnSignUp).click();
-  };
+  }
 
   // selecting gender
   async setGender() {
     await this.page.locator(this.btnCreateAccount).click();
-  };
+  }
 
   // assigning password
   async setPassword(pass) {
     await this.page.locator(this.Password).fill(pass);
-  };
+  }
 
-  
   // selecting day
   /*
  async setDay(day) {
@@ -92,75 +91,88 @@ exports.SignUp = class SignUp{
   setYear(year) {
     cy.get(this.Year).select(year);
   };
-
+*/
   // checkbox for newsletter
-  clickNewsLetter() {
-    cy.get(this.Newsletter).click();
-  };
+  async clickNewsLetter() {
+    //cy.get(this.Newsletter).click();
+    await this.page.locator(this.Newsletter).click();
+  }
 
   // checkbox for offer
-  clickOffer() {
-    cy.get(this.Offer).click();
-  };
+  async clickOffer() {
+    //cy.get(this.Offer).click();
+    await this.page.locator(this.Offer).click();
+  }
 
   // assigning first name
-  setFirstName(fname) {
-    cy.get(this.FirstName).type(fname);
-  };
+  async setFirstName(fname) {
+    // cy.get(this.FirstName).type(fname);
+    await this.page.locator(this.FirstName).fill(fname);
+  }
 
   // assigning last name
-  setLastName(lname) {
-    cy.get(this.LastName).type(lname);
-  };
+  async setLastName(lname) {
+    //cy.get(this.LastName).type(lname);
+    await this.page.locator(this.LastName).fill(lname);
+  }
 
   // assigning company name
-  setCompany(company) {
-    cy.get(this.Company).type(company);
-  };
+  async setCompany(company) {
+    //cy.get(this.Company).type(company);
+    await this.page.locator(this.Company).fill(company);
+  }
 
-  // providing address 
-  setAddress(address) {
-    cy.get(this.Address).type(address);
-  };
+  // providing address
+  async setAddress(address) {
+    //cy.get(this.Address).type(address);
+    await this.page.locator(this.Address).fill(address);
+  }
 
   // providing address 2
-  setAddress2(address2) {
-    cy.get(this.Address2).type(address2);
-  };
+  async setAddress2(address2) {
+    //cy.get(this.Address2).type(address2);
+    await this.page.locator(this.Address2).fill(address2);
+  }
 
   // providing city name
-  setCity(city) {
-    cy.get(this.City).type(city);
-  };
+  async setCity(city) {
+    //cy.get(this.City).type(city);
+    await this.page.locator(this.City).fill(city);
+  }
 
   // providing state name
-  setState(state) {
-    cy.get(this.State).type(state);
-  };
+  async setState(state) {
+    //cy.get(this.State).type(state);
+    await this.page.locator(this.State).fill(state);
+  }
 
+  /*
   // providing country name
-  setCountry(country) {
-    cy.get(this.Country).select(country);
+  async setCountry(country) {
+    //cy.get(this.Country).select(country);
   };
-
+*/
   // providing zip code
-  setZipCode(zipcode) {
-    cy.get(this.ZipCode).type(zipcode);
-  };
+  async setZipCode(zipcode) {
+    //cy.get(this.ZipCode).type(zipcode);
+    await this.page.locator(this.ZipCode).fill(zipcode);
+  }
 
   // providing mobile number
-  setMobileNum(mobilenum) {
-    cy.get(this.MobileNum).type(mobilenum);
-  };
+  async setMobileNum(mobilenum) {
+    // cy.get(this.MobileNum).type(mobilenum);
+    await this.page.locator(this.MobileNum).fill(mobilenum);
+  }
 
   // clicking create account btn
-  clickCreateAccount() {
-    cy.get(this.btnCreateAccount).click();
-  };
+  async clickCreateAccount() {
+    //cy.get(this.btnCreateAccount).click();
+    await this.page.locator(this.btnCreateAccount).click();
+  }
 
   // clicking continue btn
-  clickContinue() {
-    cy.get(this.btnContinue).click();
-  };
-  */
-}
+  async clickContinue() {
+    // cy.get(this.btnContinue).click();
+    await this.page.locator(this.btnContinue).click();
+  }
+};
