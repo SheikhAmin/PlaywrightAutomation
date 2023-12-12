@@ -9,17 +9,17 @@ test.beforeEach(async ({ page }) => {
   await page.locator('a[href="/login"]').click();
 });
 
-test.skip("Sign Up", async ({ page }) => {
+test("Sign Up", async ({ page }) => {
   const obj = new SignUp(page);
-  await obj.setName("Trial");
-  await obj.setEmailAddress("sheikhamin.c698s2@gmail.com");
+  await obj.setName("Sheikh Amin");
+  await obj.setEmailAddress("sheikhamin.c6898s2@gmail.com");
   await obj.clickSignUp();
   await obj.setGender();
   await obj.setPassword("amin");
 
-  //await obj.setDay("7");
-  //await obj.setMonth("June");
- // await obj.setYear("1999");
+  await obj.setDay("7");
+  await obj.setMonth("June");
+  await obj.setYear("1999");
   await obj.clickNewsLetter();
   await obj.clickOffer();
   await obj.setFirstName("Sheikh");
@@ -27,7 +27,7 @@ test.skip("Sign Up", async ({ page }) => {
   await obj.setCompany("Dhaka Bank");
   await obj.setAddress("244 East Nakhalpara Tejgaon, Dhaka-1215");
   await obj.setAddress2("244 East Nakhalpara Tejgaon, Dhaka-1215");
-  //await obj.setCountry("Canada");
+  await obj.setCountry("Canada");
   await obj.setCity("Dhaka");
   await obj.setState("Dhaka");
   await obj.setZipCode("1215");
@@ -37,7 +37,7 @@ test.skip("Sign Up", async ({ page }) => {
 
 test("Log In", async ({ page }) => {
   const obj = new LogIn(page);
-  await obj.enterEmail("sheikhamin.c6s2@gmail.com");
+  await obj.enterEmail("sheikhamin.c6898s2@gmail.com");
   await obj.enterPassword("amin");
   await obj.clickLogIn();
   let textvalue = await page.locator(":nth-child(10) > a");
