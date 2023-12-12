@@ -1,4 +1,3 @@
-import { beforeEach } from "node:test";
 import { test, expect } from "playwright/test";
 import { SignUp } from "../page/SignUp";
 import { LogIn } from "../page/Login";
@@ -12,7 +11,7 @@ test.beforeEach(async ({ page }) => {
 test("Sign Up", async ({ page }) => {
   const obj = new SignUp(page);
   await obj.setName("Sheikh Amin");
-  await obj.setEmailAddress("sheikhamin.c6898s2@gmail.com");
+  await obj.setEmailAddress("sheikhamin.c786s2@gmail.com");
   await obj.clickSignUp();
   await obj.setGender();
   await obj.setPassword("amin");
@@ -37,7 +36,7 @@ test("Sign Up", async ({ page }) => {
 
 test("Log In", async ({ page }) => {
   const obj = new LogIn(page);
-  await obj.enterEmail("sheikhamin.c6898s2@gmail.com");
+  await obj.enterEmail("sheikhamin.c786s2@gmail.com");
   await obj.enterPassword("amin");
   await obj.clickLogIn();
   let textvalue = await page.locator(":nth-child(10) > a");

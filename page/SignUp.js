@@ -61,7 +61,7 @@ exports.SignUp = class SignUp {
 
   //selecting year
   async setYear(year) {
-    await this.page(this.Year).selectOption(year);
+    await this.page.locator(this.Year).selectOption(year);
   }
 
   // checkbox for newsletter
