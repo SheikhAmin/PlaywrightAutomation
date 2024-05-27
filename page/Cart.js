@@ -1,4 +1,4 @@
-exports.Cart = class Cart {
+export class Cart {
   btnProduct = "a[href='/product_details/1']";
   btnAddtoCart = "button[type='button']";
   btnContinue = ".modal-footer > .btn";
@@ -86,4 +86,4 @@ exports.Cart = class Cart {
   async clickContinue1() {
     await this.page.locator(this.btnContinue1).click();
   }
-};
+}

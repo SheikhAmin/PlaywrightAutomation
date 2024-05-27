@@ -11,7 +11,7 @@ test.beforeEach(async ({ page }) => {
 test("Sign Up", async ({ page }) => {
   const obj = new SignUp(page);
   await obj.setName("Sheikh Amin");
-  await obj.setEmailAddress("sheikhamin.c786s2@gmail.com");
+  await obj.setEmailAddress("sheikhamin.ct@gmail.com");
   await obj.clickSignUp();
   await obj.setGender();
   await obj.setPassword("amin");
@@ -34,9 +34,9 @@ test("Sign Up", async ({ page }) => {
   await obj.clickCreateAccount();
 });
 
-test("Log In", async ({ page }) => {
+ test.only("Log In", async ({ page }) => {
   const obj = new LogIn(page);
-  await obj.enterEmail("sheikhamin.c786s2@gmail.com");
+  await obj.enterEmail("sheikhamin.ct@gmail.com");
   await obj.enterPassword("amin");
   await obj.clickLogIn();
   let textvalue = await page.locator(":nth-child(10) > a");

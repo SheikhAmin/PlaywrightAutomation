@@ -1,4 +1,4 @@
-exports.LogIn = class LogIn {
+export class LogIn {
   EmailAddress = "input[data-qa='login-email']";
   Password = "input[placeholder='Password']";
   btnLogin = "button[data-qa='login-button']";
@@ -20,4 +20,4 @@ exports.LogIn = class LogIn {
   async clickLogIn() {
     await this.page.locator(this.btnLogin).click();
   }
-};
+}

@@ -1,4 +1,4 @@
-exports.SignUp = class SignUp {
+export class SignUp {
   Name = "input[placeholder='Name']";
   EmailAddress = '[data-qa="signup-email"]';
   btnSignUp = '[data-qa="signup-button"]';
@@ -133,4 +133,4 @@ exports.SignUp = class SignUp {
   async clickContinue() {
     await this.page.locator(this.btnContinue).click();
   }
-};
+}
