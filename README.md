@@ -1,5 +1,5 @@
 
-# # E-Commerce Website Automation  
+# # PlaywrightAutomation  
 
 An E-Commerce Website is automated by implementing test cases for various test scenarios.
 
